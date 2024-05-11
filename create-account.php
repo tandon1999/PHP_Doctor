@@ -135,7 +135,7 @@ if($_POST){
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="cpassword" class="form-label">Conform Password: </label>
+                    <label for="cpassword" class="form-label">Confirm Password: </label>
                 </td>
             </tr>
             <tr>
@@ -164,7 +164,7 @@ if($_POST){
             <tr>
                 <td colspan="2">
                     <br>
-                    <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
+                    <label for="" class="sub-text" style="font-weight: 280;">Already SIgn Up?&#63; </label>
                     <a href="login.php" class="hover-link1 non-style-link">Login</a>
                     <br><br><br>
                 </td>
