@@ -158,13 +158,13 @@
                     <table class="filter-container doctor-header patient-header" style="border: none;width:95%" border="0" >
                     <tr>
                         <td >
-                            <h3>Welcome!</h3>
-                            <h1><?php echo $username  ?>.</h1>
-                            <p>Haven't any idea about doctors? no problem let's jumping to 
-                                <a href="doctors.php" class="non-style-link"><b>"All Doctors"</b></a> section or 
-                                <a href="schedule.php" class="non-style-link"><b>"Sessions"</b> </a><br>
-                                Track your past and future appointments history.<br>Also find out the expected arrival time of your doctor or medical consultant.<br><br>
-                            </p>
+                        <h3>Welcome!</h3>
+                                    <h1><?php echo $username  ?>.</h1>
+                                    <p>Haven't any idea about doctors? See all the available doctors!
+                                        <a href="doctors.php" class="non-style-link"><b>"All Doctors"</b></a> section or
+                                        <a href="schedule.php" class="non-style-link"><b>"Sessions"</b> </a><br>
+                                        Track your appointment history here<br>FInd out here all the doctors arrival time_nanosleep<br><br>
+                                    </p>
                             
                             <h3>Channel a Doctor Here</h3>
                             <form action="schedule.php" method="post" style="display: flex">
