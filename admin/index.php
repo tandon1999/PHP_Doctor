@@ -26,7 +26,7 @@
 <body>
     <?php
 
-    //learn from w3schools.com
+
 
     session_start();
 
@@ -57,7 +57,7 @@
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrator</p>
-                                    <p class="profile-subtitle">admin@edoc.com</p>
+                                    <p class="profile-subtitle">Welcome</p>
                                 </td>
                             </tr>
                             <tr>
@@ -232,7 +232,7 @@
                 <tr>
                     <td colspan="4">
                         <table width="100%" border="0" class="dashbord-tables">
-                            <tr>
+                            <!-- <tr>
                                 <td>
                                     <p style="padding:10px;padding-left:48px;padding-bottom:0;font-size:23px;font-weight:700;color:var(--primarycolor);">
                                         Upcoming Appointments until Next <?php  
@@ -256,7 +256,7 @@
                                         Add,Remove and Many features available in @Schedule section.
                                     </p>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td width="50%">
                                     <center>
@@ -265,29 +265,20 @@
                                         <thead>
                                         <tr>    
                                                 <th class="table-headin" style="font-size: 12px;">
-                                                        
-                                                    Appointment number
-                                                    
+                                                    Appoint. Number
                                                 </th>
                                                 <th class="table-headin">
                                                     Patient name
                                                 </th>
                                                 <th class="table-headin">
-                                                    
-                                                
-                                                    Doctor
-                                                    
+                                                    Doctor 
                                                 </th>
                                                 <th class="table-headin">
-                                                    
-                                                
                                                     Session
-                                                    
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        
                                             <?php
                                             $nextweek=date("Y-m-d",strtotime("+1 week"));
                                             $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  where schedule.scheduledate>='$today'  and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc";
@@ -365,19 +356,13 @@
                                         <thead>
                                         <tr>
                                                 <th class="table-headin">
-                                                    
-                                                
                                                 Session Title
-                                                
                                                 </th>
-                                                
                                                 <th class="table-headin">
                                                     Doctor
                                                 </th>
                                                 <th class="table-headin">
-                                                    
                                                     Sheduled Date & Time
-                                                    
                                                 </th>
                                                     
                                                 </tr>
