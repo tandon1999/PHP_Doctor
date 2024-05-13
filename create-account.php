@@ -26,7 +26,7 @@
     $_SESSION["usertype"] = "";
 
     // Set the new timezone
-    date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('Europe/London');
     $date = date('Y-m-d');
 
     $_SESSION["date"] = $date;
@@ -109,7 +109,7 @@
                 </tr>
                 <tr>
                     <td class="label-td" colspan="2">
-                        <input type="tel" name="tele" class="input-text" placeholder="ex: 0712345678" pattern="[0]{1}[0-9]{9}">
+                        <input type="tel" placeholder="Mobile Number" name="tele" class="input-text">
                     </td>
                 </tr>
                 <tr>
@@ -129,7 +129,7 @@
                 </tr>
                 <tr>
                     <td class="label-td" colspan="2">
-                        <input type="password" name="cpassword" class="input-text" placeholder="Conform Password" required>
+                        <input type="password" name="cpassword" class="input-text" placeholder="Confirm Password" required>
                     </td>
                 </tr>
 

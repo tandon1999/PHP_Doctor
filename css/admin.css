@@ -42,19 +42,24 @@
 
 .logout-btn{
     margin-top: 30px;
-    width: 85%;
+    width: 50%;
 }
 
 .profile-container{
     border-bottom: 1.5px solid rgb(235, 235, 235);
     /*border-radius: 6px;*/
-    padding-top: 18%;
-    padding-bottom: 12%;
+    padding-top: 12%;
+    padding-bottom: 6%;
     /*box-shadow: 0 0 3px rgba(52,58,64,0.08);*/
     text-align: center;
     
 }
-
+.logout-container{
+    padding-bottom: 12%;
+    width: 100%;
+    text-align: center;
+    
+}
 
 /*.menu-items1{
     font-weight: 500;
