@@ -29,6 +29,9 @@
         if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
             header("location: ../login.php");
         }
+        else{
+            $useremail=$_SESSION["user"];
+        }
 
     }else{
         header("location: ../login.php");
@@ -53,7 +56,7 @@
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrator</p>
-                                    <p class="profile-subtitle"><?php echo substr($aemail, 0, 22)  ?></p>
+                                    <p class="profile-subtitle"><?php echo substr($useremail, 0, 22)  ?></p>
                                 </td>
                             </tr>
                     </table>

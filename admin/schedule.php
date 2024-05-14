@@ -32,6 +32,9 @@
         if (($_SESSION["user"]) == "" or $_SESSION['usertype'] != 'a') {
             header("location: ../login.php");
         }
+        else{
+            $aemail=$_SESSION["user"];
+        }
     } else {
         header("location: ../login.php");
     }

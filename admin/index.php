@@ -34,6 +34,9 @@
         if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
             header("location: ../login.php");
         }
+        else{
+            $useremail=$_SESSION["user"];
+        }
 
     }else{
         header("location: ../login.php");
@@ -57,7 +60,7 @@
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrator</p>
-                                    <p class="profile-subtitle"><?php echo substr($aemail, 0, 22)  ?></p>
+                                    <p class="profile-subtitle"><?php echo substr($useremail, 0, 22)  ?></p>
                                 </td>
                             </tr>
                             
@@ -137,9 +140,7 @@
                                     Today's Date
                                 </p>
                                 <p class="heading-sub12" style="padding: 0;margin: 0;">
-                                    <?php 
-                                date_default_timezone_set('Asia/Kolkata');
-        
+                                <?php 
                                 $today = date('Y-m-d');
                                 echo $today;
 
@@ -148,10 +149,9 @@
                                 $doctorrow = $database->query("select  * from  doctor;");
                                 $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
                                 $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
-
-
                                 ?>
                                 </p>
+
                             </td>
                             <td width="10%">
                                 <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
@@ -174,6 +174,7 @@
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex">
                                         <div>
                                                 <div class="h1-dashboard">
+
                                                     <?php    echo $doctorrow->num_rows  ?>
                                                 </div><br>
                                                 <div class="h3-dashboard">
@@ -285,10 +286,15 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $nextweek=date("Y-m-d",strtotime("+1 week"));
-                                            $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  where schedule.scheduledate>='$today'  and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc";
-
-                                                $result= $database->query($sqlmain);
+                                            $nextweek = date("Y-m-d", strtotime("+1 week"));
+                                            $sqlmain = "SELECT appointment.appoid, schedule.scheduleid, schedule.title, doctor.docname, patient.pname, schedule.scheduledate, schedule.scheduletime, appointment.apponum, appointment.appodate 
+            FROM schedule 
+            INNER JOIN appointment ON schedule.scheduleid = appointment.scheduleid 
+            INNER JOIN patient ON patient.pid = appointment.pid 
+            INNER JOIN doctor ON schedule.docid = doctor.docid  
+            WHERE schedule.scheduledate >= '$today' AND schedule.scheduledate <= '$nextweek' 
+            ORDER BY schedule.scheduledate DESC";
+                             $result= $database->query($sqlmain);
                 
                                                 if($result->num_rows==0){
                                                     echo '<tr>

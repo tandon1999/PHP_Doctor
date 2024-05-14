@@ -51,8 +51,6 @@
 
     //echo $userid;
     //echo $username;
-    
-    date_default_timezone_set('Asia/Kolkata');
 
     $today = date('Y-m-d');
 
@@ -155,32 +153,27 @@
                                         <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php  echo $insertkey ?>">&nbsp;&nbsp;
                                         
                                         <?php
-                                            echo '<datalist id="doctors">';
-                                            $list11 = $database->query("select DISTINCT * from  doctor;");
-                                            $list12 = $database->query("select DISTINCT * from  schedule GROUP BY title;");
-                                            
 
-                                            
+    $list11 = $database->query("SELECT DISTINCT docname FROM doctor;");
+    
 
+    $list12 = $database->query("SELECT DISTINCT title FROM schedule;");
 
-                                            for ($y=0;$y<$list11->num_rows;$y++){
-                                                $row00=$list11->fetch_assoc();
-                                                $d=$row00["docname"];
-                                               
-                                                echo "<option value='$d'><br/>";
-                                               
-                                            };
+    echo '<datalist id="doctors">';
 
+    while ($row = $list11->fetch_assoc()) {
+        $d = $row["docname"];
+        echo "<option value='$d'><br/>";
+    }
 
-                                            for ($y=0;$y<$list12->num_rows;$y++){
-                                                $row00=$list12->fetch_assoc();
-                                                $d=$row00["title"];
-                                               
-                                                echo "<option value='$d'><br/>";
-                                                                                         };
+    while ($row = $list12->fetch_assoc()) {
+        $d = $row["title"];
+        echo "<option value='$d'><br/>";
+    }
 
-                                        echo ' </datalist>';
-            ?>
+    echo '</datalist>';
+?>
+
                                         
                                 
                                         <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
