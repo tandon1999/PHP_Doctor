@@ -94,6 +94,19 @@
                         <a href="settings.php" class="non-style-link-menu"><div><p class="menu-text">Settings</p></a></div>
                     </td>
                 </tr>
+
+                <tr>
+                    <td style="padding:10px" colspan="2">
+                        <table border="0" class="logout-container">
+                            <tr>
+                                <td colspan="2">
+                                <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                </td>
+                            </tr>
+                    </table>
+                    </td>
+                
+                </tr>
                 
             </table>
         </div>
