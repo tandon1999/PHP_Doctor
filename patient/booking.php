@@ -224,6 +224,11 @@ if ($result->num_rows > 0) {
                                     //echo $sql2;
                                      $result12= $database->query($sql2);
                                      $apponum=($result12->num_rows)+1;
+
+                                     function generateChannelingFee() {
+                                        return number_format(rand(1000, 5000), 2); // Generates a random fee between £1000 and £5000
+                                    }
+                                    $channelingFee = generateChannelingFee();
                                     
                                     echo '
                                         <form action="booking-complete.php" method="post">
@@ -255,8 +260,7 @@ if ($result->num_rows > 0) {
                                                             Session Title: '.$title.'<br>
                                                             Session Scheduled Date: '.$scheduledate.'<br>
                                                             Session Starts : '.$scheduletime.'<br>
-                                                            Channeling fee : <b>LKR.2 000.00</b>
-
+                                                            Channeling fee : <b>£'.$channelingFee.'</b>
                                                         </div>
                                                         <br>
                                                         
