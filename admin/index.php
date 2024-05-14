@@ -57,14 +57,10 @@
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrator</p>
-                                    <p class="profile-subtitle">Welcome</p>
+                                    <p class="profile-subtitle"><?php echo substr($aemail, 0, 22)  ?></p>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
+                            
                     </table>
                     </td>
                 </tr>
@@ -93,6 +89,15 @@
                         <a href="patient.php" class="non-style-link-menu"><div><p class="menu-text">Patients</p></a></div>
                     </td>
                 </tr>
+                <td style="padding:10px" colspan="2">
+                        <table border="0" class="logout-container">
+                            <tr>
+                                <td colspan="2">
+                                <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                </td>
+                            </tr>
+                    </table>
+                    </td>
             </table>
         </div>
         <div class="dash-body" style="margin-top: 15px">

@@ -55,14 +55,9 @@
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrator</p>
-                                    <p class="profile-subtitle">admin@edoc.com</p>
-                                </td>
+                                    <p class="profile-subtitle"><?php echo substr($useremail, 0, 22)  ?></p>                                </td>
                             </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="../logout.php"><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
+                            
                         </table>
                     </td>
 
@@ -110,7 +105,15 @@
             </a></div>
         </td>
     </tr>
-
+    <td style="padding:10px" colspan="2">
+                        <table border="0" class="logout-container">
+                            <tr>
+                                <td colspan="2">
+                                <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                </td>
+                            </tr>
+                    </table>
+                    </td>
     </table>
     </div>
     <div class="dash-body">
